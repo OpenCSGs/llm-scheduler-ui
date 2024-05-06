@@ -2,8 +2,8 @@
 
 ## Overview
 
-LLM scheduler UI is an open source web interface to LLM jobs. the scheduler engin is using [Slurm](https://slurm.schedmd.com/)
-It performs large model scheduling based on GPU resources.
+LLM scheduler UI is an open source web interface to LLM jobs. the scheduler engine is using [Slurm](https://slurm.schedmd.com/) as default engine
+It performs large model jobs scheduling based on GPU resources.
 
 ## Prerequisite
 
