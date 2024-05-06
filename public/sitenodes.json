@@ -1,0 +1,12 @@
+{
+    "node": {
+        "openAI": -1,
+        "azureOpenAI": -1,
+        "openAIFunctionAgent": -1,
+        "azureChatOpenAI": -1,
+        "chatOpenAI": -1,
+        "openAIEmbeddings": -1,
+        "azureOpenAIEmbeddings": -1
+    },
+    "tip": "因为政策原因OpenAI相关服务暂时无法使用，敬请谅解"
+}
