@@ -84,11 +84,11 @@ const EnhancedTableToolbar = (props) => {
             >
                 {numSelected > 0 ? (
                     <Typography sx={{ flex: '1 1 100%' }} color='inherit' variant='subtitle1' component='div'>
-                        {numSelected} 条被选择
+                        {numSelected} selected
                     </Typography>
                 ) : (
                     <Typography sx={{ flex: '1 1 100%' }} variant='h6' id='tableTitle' component='div'>
-                        未选择条目
+                        No items
                     </Typography>
                 )}
                 {numSelected > 0 ? (
@@ -131,7 +131,7 @@ const EnhancedTableToolbar = (props) => {
                         >
                             <MenuItem key='past1day'>
                                 <FormControl>
-                                    <FormLabel id='demo-controlled-radio-buttons-group'>时间</FormLabel>
+                                    <FormLabel id='demo-controlled-radio-buttons-group'>Time</FormLabel>
                                     <RadioGroup
                                         aria-labelledby='demo-controlled-radio-buttons-group'
                                         name='controlled-radio-buttons-group'

@@ -58,11 +58,11 @@ const EnhancedTableToolbar = (props) => {
             >
                 {numSelected > 0 ? (
                     <Typography sx={{ flex: '1 1 100%' }} color='inherit' variant='subtitle1' component='div'>
-                        {numSelected} 条被选择
+                        {numSelected} selected
                     </Typography>
                 ) : (
                     <Typography sx={{ flex: '1 1 100%' }} variant='h6' id='tableTitle' component='div'>
-                        未选择条目
+                        No selected items
                     </Typography>
                 )}
                 {numSelected > 0 ? (

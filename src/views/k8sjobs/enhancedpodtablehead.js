@@ -39,14 +39,14 @@ export const PodHeadCells = [
         id: 'lable',
         align: 'left',
         disablePadding: false,
-        label: '标签',
+        label: 'Lable',
         sortable: false
     },
     {
         id: 'node',
         align: 'left',
         disablePadding: false,
-        label: '节点',
+        label: 'Node',
         sortable: false
     },
     {
@@ -60,7 +60,7 @@ export const PodHeadCells = [
         id: 'start_time',
         align: 'center',
         disablePadding: false,
-        label: '创建时间',
+        label: 'Creation Time',
         sortable: true
     }
 ]

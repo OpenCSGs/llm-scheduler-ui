@@ -19,7 +19,7 @@ const AboutDialog = ({ show, onCancel }) => {
             aria-describedby='alert-dialog-description'
         >
             <DialogTitle sx={{ fontSize: '1rem' }} id='alert-dialog-title'>
-                版本信息
+                Version Info
             </DialogTitle>
             <DialogContent>
                 {data && (
@@ -27,8 +27,8 @@ const AboutDialog = ({ show, onCancel }) => {
                         <Table aria-label='simple table'>
                             <TableHead>
                                 <TableRow>
-                                    <TableCell>最新版本</TableCell>
-                                    <TableCell>发布时间</TableCell>
+                                    <TableCell>Latest Version</TableCell>
+                                    <TableCell>Publish Time</TableCell>
                                 </TableRow>
                             </TableHead>
                             <TableBody>
