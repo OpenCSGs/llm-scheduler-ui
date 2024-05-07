@@ -77,8 +77,8 @@ const JobQueue = () => {
                 <TabContext value={tab}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                         <TabList onChange={handleChange} aria-label='lab API tabs example'>
-                            <Tab label='可用队列' value='queues' />
-                            <Tab label='对应关系' value='myqueues' />
+                            <Tab label='Available Partition' value='queues' />
+                            <Tab label='Relationship' value='myqueues' />
                         </TabList>
                     </Box>
                     <TabPanel value='queues'>
@@ -86,11 +86,11 @@ const JobQueue = () => {
                             <Table sx={{ minWidth: 650 }} aria-label='simple table'>
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell>队列名称</TableCell>
-                                        <TableCell>资源限制</TableCell>
-                                        <TableCell>优先级</TableCell>
-                                        <TableCell>暂停时间</TableCell>
-                                        <TableCell>节点</TableCell>
+                                        <TableCell>Partition Name</TableCell>
+                                        <TableCell>Resources Limit</TableCell>
+                                        <TableCell>Priority</TableCell>
+                                        <TableCell>Grace Time</TableCell>
+                                        <TableCell>Node</TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
@@ -118,11 +118,11 @@ const JobQueue = () => {
                             <Table sx={{ minWidth: 650 }} aria-label='simple table'>
                                 <TableHead>
                                     <TableRow>
-                                        <TableCell>用户名称</TableCell>
-                                        <TableCell align='right'>队列</TableCell>
+                                        <TableCell>User Name</TableCell>
+                                        <TableCell align='right'>Partition</TableCell>
                                         <TableCell align='right'>QOS</TableCell>
-                                        <TableCell align='right'>分组</TableCell>
-                                        <TableCell align='right'>集群</TableCell>
+                                        <TableCell align='right'>Account</TableCell>
+                                        <TableCell align='right'>Cluster</TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>

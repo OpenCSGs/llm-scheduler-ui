@@ -71,7 +71,7 @@ const dashboard = () => {
             },
             {
                 id: 'workload',
-                title: 'Tasks Management',
+                title: 'Tasks',
                 type: 'collapse',
                 url: '',
                 icon: icons.FitbitIcon,
@@ -98,7 +98,7 @@ const dashboard = () => {
             },
             {
                 id: 'tools',
-                title: 'My Resources',
+                title: 'Partitions',
                 type: 'item',
                 url: '/jobqueue',
                 icon: AccountCircleIcon,
@@ -106,7 +106,7 @@ const dashboard = () => {
             },
             {
                 id: 'users',
-                title: 'Organization Management',
+                title: 'Organizations',
                 type: 'collapse',
                 icon: icons.ManageAccountsIcon,
                 breadcrumbs: true,

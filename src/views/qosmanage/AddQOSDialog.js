@@ -347,7 +347,7 @@ const AddQOSDialog = ({ show, row_data, onCancel, onConfirm }) => {
                     </div>
                     <div>
                         <Stack sx={{ position: 'relative' }} direction='row'>
-                            <Typography variant='overline'>Job Limit：</Typography>
+                            <Typography variant='overline'>Job Limit: </Typography>
                         </Stack>
                         <TextField
                             id='GrpJobs'

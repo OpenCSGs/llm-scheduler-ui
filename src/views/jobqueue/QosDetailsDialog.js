@@ -229,7 +229,7 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
             aria-describedby='alert-dialog-description'
         >
             <DialogTitle sx={{ fontSize: '1rem' }} id='alert-dialog-title'>
-                QOS详情
+                QOS Details
             </DialogTitle>
             <DialogContent>
                 <Box
@@ -242,15 +242,15 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                 >
                     <div>
                         <Stack sx={{ position: 'relative' }} direction='row'>
-                            <Typography variant='overline'>基本参数：</Typography>
+                            <Typography variant='overline'>Basic Info：</Typography>
                         </Stack>
                         <TextField
                             id='name'
                             required
                             type='string'
                             fullWidth
-                            label='QOS 名称'
-                            helperText='名称不能重复'
+                            label='QOS Name'
+                            helperText='Unique Name'
                             variant='standard'
                             value={name}
                             name='name'
@@ -260,8 +260,8 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                             id='description'
                             type='string'
                             fullWidth
-                            label='描述'
-                            helperText='qos描述信息'
+                            label='Description'
+                            helperText='qos description'
                             variant='standard'
                             value={description}
                             name='description'
@@ -277,8 +277,8 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                                 pattern: '/^-?d+(?:.d+)?$/g'
                             }}
                             fullWidth
-                            label='优先级'
-                            helperText='值越小, 优先级越高, 最小值 1'
+                            label='Priority'
+                            helperText='default: 1'
                             variant='standard'
                             value={priority}
                             name='priority'
@@ -287,7 +287,7 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                     </div>
                     <div>
                         <Stack sx={{ position: 'relative' }} direction='row'>
-                            <Typography variant='overline'>抢占策略：</Typography>
+                            <Typography variant='overline'>Preempt Mode: </Typography>
                         </Stack>
                         <TextField
                             id='PreemptMode'
@@ -313,8 +313,8 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                             id='GraceTime'
                             type='number'
                             fullWidth
-                            label='宽限时间'
-                            helperText='指定作业在被选择为抢占后执行的时间段。只有在PreemptMode=CANCEL时才会使用此选项。即没有抢占延迟。一旦选择了一个作业进行抢占，其结束时间被设置为当前时间加上本字段。单位：秒，默认值为零'
+                            label='Grace Time'
+                            helperText='Specifies a time period for a job to execute after it is selected to be preempted. This option can be specified by partition or QOS using the slurm.conf file or database respectively'
                             variant='standard'
                             value={GraceTime}
                             name='GraceTime'
@@ -325,8 +325,8 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                             type='number'
                             InputProps={{ inputProps: { min: '1', max: '604800', step: '1' } }}
                             fullWidth
-                            label='抢占豁免时间'
-                            helperText='指定作业在考虑抢占之前的最小运行时间。与GraceTime不同，这适用于所有PreemptMode的值。-1的时间表示禁用该选项，相当于0。单位：秒'
+                            label='Preempt Exempt Time'
+                            helperText='Specifies minimum run time of jobs before they are considered for preemption. This is only honored when the PreemptMode is set to REQUEUE or CANCEL. It is specified as a time string: A time of -1 disables the option, equivalent to 0'
                             variant='standard'
                             value={PreemptExemptTime}
                             name='PreemptExemptTime'
@@ -335,14 +335,14 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                     </div>
                     <div>
                         <Stack sx={{ position: 'relative' }} direction='row'>
-                            <Typography variant='overline'>作业限制：</Typography>
+                            <Typography variant='overline'>Job Limit:</Typography>
                         </Stack>
                         <TextField
                             id='GrpJobs'
                             type='number'
                             fullWidth
-                            label='最大同时作业运行数'
-                            helperText='QOS能够同时运行的作业总数。一旦达到此限制，新的作业将被排队，但只有在前面的作业完成后，才能允许运行该组中的新作业'
+                            label='GrpJobs'
+                            helperText='The total number of jobs able to run at any given time from an association and its children. If this limit is reached, new jobs will be queued but only allowed to run after previous jobs complete from this group.'
                             variant='standard'
                             value={GrpJobs}
                             name='GrpJobs'
@@ -352,8 +352,8 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                             id='GrpWall'
                             type='number'
                             fullWidth
-                            label='最长挂钟时间总数'
-                            helperText='QOS能够分配的运行作业的最长挂钟时间总数的上限。一旦达到此限制，该QOS中的未来作业将被排队，直到它们能够在限制范围内运行。此使用情况会按照PriorityDecayHalfLife的速率进行衰减,单位： mins'
+                            label='GrpWall'
+                            helperText='The maximum wall clock time running jobs are able to be allocated in aggregate for an association and its children. If this limit is reached, future jobs in this association will be queued until they are able to run inside the limit.'
                             variant='standard'
                             value={GrpWall}
                             name='GrpWall'
@@ -364,8 +364,8 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                             id='MaxWallDurationPerJob'
                             type='number'
                             fullWidth
-                            label='单个作业最长挂钟时间'
-                            helperText='每个作业的最长挂钟时间，单位：mins'
+                            label='Max Wall Duration Per Job'
+                            helperText='The maximum wall clock time any individual job can run for in the given association. If this limit is reached, the job will be denied at submission.'
                             variant='standard'
                             value={MaxWallDurationPerJob}
                             name='MaxWallDurationPerJob'
@@ -376,8 +376,8 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                             id='MaxJobsPerAccount'
                             type='number'
                             fullWidth
-                            label='单group最大同时运行作业数'
-                            helperText='每个group同时运行作业数量的上限'
+                            label='Max Jobs Per Account'
+                            helperText='The maximum number of jobs an account (or sub-account) can have running at a given time.'
                             variant='standard'
                             value={MaxJobsPerAccount}
                             name='MaxJobsPerAccount'
@@ -387,8 +387,8 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                             id='MaxJobsPerUser'
                             type='number'
                             fullWidth
-                            label='单用户同时运行作业数'
-                            helperText='每个用户同时运行作业数量的上限'
+                            label='Max Jobs Per User'
+                            helperText='The maximum number of jobs a user can have running at a given time.'
                             variant='standard'
                             value={MaxJobsPerUser}
                             name='MaxJobsPerUser'
@@ -399,8 +399,8 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                             id='MaxSubmitJobsPerAccount'
                             type='number'
                             fullWidth
-                            label='单group提交作业数峰值'
-                            helperText='单group能够同时运行和排队的作业数量的上限，超出将不被允许提交，直到上限解除'
+                            label='Max Submit Jobs Per Account'
+                            helperText='The maximum number of jobs an account (or sub-account) can have running and pending at a given time.'
                             variant='standard'
                             value={MaxSubmitJobsPerAccount}
                             name='MaxSubmitJobsPerAccount'
@@ -411,8 +411,8 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                             id='MaxSubmitJobsPerUser'
                             type='number'
                             fullWidth
-                            label='单用户最大提交作业数'
-                            helperText='单用户能够同时运行和排队的作业数量的上限，超出将不被允许提交，直到上限解除'
+                            label='Max Submit Jobs Per User'
+                            helperText='The maximum number of jobs a user can have running and pending at a given time.'
                             variant='standard'
                             value={MaxSubmitJobsPerUser}
                             name='MaxSubmitJobsPerUser'
@@ -422,8 +422,8 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                             id='GrpTRES'
                             type='string'
                             fullWidth
-                            label='最大资源总数'
-                            helperText='该QOS在任何给定时间能够使用的TRES（资源消耗）总数的上限。一旦达到此限制，新的作业将被排队，但只有在该组释放出资源后才允许运行。例如：cpu=4,mem=40000,gres/gpu=50'
+                            label='GrpTRES'
+                            helperText='The total count of TRES able to be used at any given time from jobs running from an association and its children. If this limit is reached, new jobs will be queued but only allowed to run after resources have been relinquished from this group.'
                             variant='standard'
                             value={GrpTRES}
                             name='GrpTRES'
@@ -433,8 +433,8 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                             id='MaxTRESPerAccount'
                             type='string'
                             fullWidth
-                            label='单group资源消耗峰值'
-                            helperText='每个组能够使用的TRES（资源消耗）数量的最大上限，例如cpu=4,mem=200,node=3'
+                            label='Max TRES Per Account'
+                            helperText='The maximum number of TRES an account can allocate at a given time.'
                             variant='standard'
                             value={MaxTRESPerAccount}
                             name='MaxTRESPerAccount'
@@ -444,8 +444,8 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                             id='MaxTRESPerJob'
                             type='string'
                             fullWidth
-                            label='单作业资源消耗峰值'
-                            helperText='每个作业能够使用的TRES（资源消耗）数量的最大上限，例如cpu=4,mem=200,node=3'
+                            label='Max TRES Per Job'
+                            helperText='The maximum number of TRES each job is able to use. cpu=4,mem=200,node=3'
                             variant='standard'
                             value={MaxTRESPerJob}
                             name='MaxTRESPerJob'
@@ -455,8 +455,8 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                             id='MaxTRESPerNode'
                             type='string'
                             fullWidth
-                            label='单节点资源消耗峰值'
-                            helperText='每个节点能够使用的TRES（资源消耗）数量的最大上限，例如cpu=4,mem=200'
+                            label='Max TRES Per Node'
+                            helperText='The maximum number of TRES each node in a job allocation can use. cpu=4,mem=200'
                             variant='standard'
                             value={MaxTRESPerNode}
                             name='MaxTRESPerNode'
@@ -466,8 +466,8 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                             id='MaxTRESPerUser'
                             type='string'
                             fullWidth
-                            label='单用户资源消耗峰值'
-                            helperText='每个用户在任何给定时间能够分配的TRES（资源消耗）数量的最大上限，例如cpu=4,mem=20000,gres/gpu=20'
+                            label='Max TRES Per User'
+                            helperText='The maximum number of TRES a user can allocate at a given time. cpu=4,mem=20000,gres/gpu=20'
                             variant='standard'
                             value={MaxTRESPerUser}
                             name='MaxTRESPerUser'
@@ -477,8 +477,8 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                             id='UsageFactor'
                             type='number'
                             fullWidth
-                            label='资源消耗计算因子'
-                            helperText='一个浮点数，用于计算作业的TRES（资源消耗）使用量（例如，RawUsage、TRESMins、TRESRunMins）。例如，如果usagefactor为2，则对于每个TRESBillingUnit秒作业运行的时间将计为2。如果usagefactor为0.5，则每秒只计为一半的时间。设置为0表示作业不会产生时间上的使用量，默认：1.0'
+                            label='Usage Factor'
+                            helperText='A float that is factored into a job TRES usage (e.g. RawUsage, TRESMins, TRESRunMins).Default: 1.0'
                             variant='standard'
                             value={UsageFactor}
                             name='UsageFactor'
@@ -488,8 +488,8 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                             id='UsageThreshold'
                             type='number'
                             fullWidth
-                            label='QOS利用率阈值'
-                            helperText='一个浮点数，表示qos最低公平份额的阈值，达到此阈值以下的qos将无法运行作业。如果qos的使用量低于此阈值，并且有待处理的作业或提交新作业，则这些作业将被暂停，直到使用量再次超过阈值为止,取值范围：0~1,例如0.88，默认：0'
+                            label='Usage Threshold'
+                            helperText='Required QOS threshold has been breached.'
                             variant='standard'
                             value={UsageThreshold}
                             name='UsageThreshold'
@@ -508,7 +508,7 @@ const QosDetailsDialog = ({ show, qosName, onCancel, onConfirm }) => {
                     variant='contained'
                     onClick={onCancel}
                 >
-                    关闭
+                    Close
                 </StyledButton>
             </DialogActions>
             <ConfirmDialog />
