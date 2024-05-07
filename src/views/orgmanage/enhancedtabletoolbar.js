@@ -26,14 +26,14 @@ const EnhancedTableToolbar = (props) => {
                     <>
                         <Button disabled={rowsNumber == 0} sx={{ flex: '1 1 auto' }} onClick={() => operation('modify_limits')}>
                             {currentLimit
-                                ? '队列: ' + (currentLimit['partition'] || '--') + ' QOS:' + (currentLimit['qos'] || '--')
-                                : '资源分配'}
+                                ? 'Partition: ' + (currentLimit['partition'] || '--') + ' QOS:' + (currentLimit['qos'] || '--')
+                                : 'QOS'}
                         </Button>
                         <Button disabled={numSelected == 0} onClick={() => operation('remove_memeber')} startIcon={<Remove />}>
-                            移出成员
+                            Remove Member
                         </Button>
                         <Button onClick={() => operation('add_memeber')} startIcon={<Add />}>
-                            添加成员
+                            Add Member
                         </Button>
                     </>
                 )}

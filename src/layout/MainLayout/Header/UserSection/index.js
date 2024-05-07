@@ -182,7 +182,7 @@ const UserSection = ({ username, handleLogout }) => {
                                             {showName && (
                                                 <Box sx={{ p: 2, verticalAlign: 'center' }}>
                                                     <Typography component='span' variant='h4'>
-                                                        您好，{showName}！
+                                                        welcome，{showName}！
                                                     </Typography>
                                                 </Box>
                                             )}

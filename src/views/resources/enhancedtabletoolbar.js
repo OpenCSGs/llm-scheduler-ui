@@ -27,10 +27,10 @@ const EnhancedTableToolbar = (props) => {
     const closeNodes = async () => {
         let names = getShowAppNames()
         const confirmPayload = {
-            title: '关闭',
-            description: `确认要关闭${names}吗?`,
-            confirmButtonName: '确定',
-            cancelButtonName: '取消'
+            title: 'Close',
+            description: `are you sure to close ${names}?`,
+            confirmButtonName: 'Yes',
+            cancelButtonName: 'No'
         }
         const isConfirmed = await confirm(confirmPayload)
         if (isConfirmed) {
@@ -44,7 +44,7 @@ const EnhancedTableToolbar = (props) => {
     const openNodes = async () => {
         let names = getShowAppNames()
         const confirmPayload = {
-            title: '打开',
+            title: 'Open',
             description: `确认要打开${names}吗?`,
             confirmButtonName: '确定',
             cancelButtonName: '取消'

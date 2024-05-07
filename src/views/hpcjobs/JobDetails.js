@@ -53,7 +53,7 @@ const JobDetails = (props) => {
             onClose={onCancel}
             aria-describedby='alert-dialog-slide-description'
         >
-            <DialogTitle sx={{ fontSize: '1rem' }}>{'作业详情'}</DialogTitle>
+            <DialogTitle sx={{ fontSize: '1rem' }}>{'Job Details'}</DialogTitle>
             <IconButton
                 aria-label='close'
                 color='inherit'
@@ -71,8 +71,8 @@ const JobDetails = (props) => {
             <TabContext value={summaryTable}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <TabList onChange={handleTabChange} aria-label='lab API summaryTables example'>
-                        <Tab label='汇总' value='summary' />
-                        <Tab label='数据' value='data' />
+                        <Tab label='Summary' value='summary' />
+                        <Tab label='Data' value='data' />
                     </TabList>
                 </Box>
                 <TabPanel value='summary'>

@@ -61,8 +61,8 @@ const OrganizationDialog = ({ show, currentOrg, onCancel, onConfirm }) => {
                             type='string'
                             required
                             fullWidth
-                            label='组织名称'
-                            helperText='新建组织'
+                            label='Org name'
+                            helperText='New Org'
                             variant='standard'
                             value={orgName}
                             name='orgName'
@@ -74,8 +74,8 @@ const OrganizationDialog = ({ show, currentOrg, onCancel, onConfirm }) => {
                         required
                         type='string'
                         fullWidth
-                        label={currentOrg ? '创建新的分组' : '初始化分组'}
-                        helperText={currentOrg ? '' : '组织创建的时候需要携带创建一个初始化分组,并保证唯一性'}
+                        label={currentOrg ? 'create new group' : 'init group'}
+                        helperText={currentOrg ? '' : 'new org must have a init unique group'}
                         variant='standard'
                         value={accountName}
                         defaultValue='default'
@@ -87,7 +87,7 @@ const OrganizationDialog = ({ show, currentOrg, onCancel, onConfirm }) => {
                         required
                         type='string'
                         fullWidth
-                        label='分组描述'
+                        label='group description'
                         variant='standard'
                         value={desc}
                         name='desc'
@@ -105,7 +105,7 @@ const OrganizationDialog = ({ show, currentOrg, onCancel, onConfirm }) => {
                     variant='contained'
                     onClick={onCancel}
                 >
-                    取消
+                    Cancel
                 </StyledButton>
                 <StyledButton
                     sx={{
@@ -117,7 +117,7 @@ const OrganizationDialog = ({ show, currentOrg, onCancel, onConfirm }) => {
                     variant='contained'
                     onClick={() => onConfirm(orgName, accountName, desc)}
                 >
-                    确认
+                    OK
                 </StyledButton>
             </DialogActions>
             <ConfirmDialog />

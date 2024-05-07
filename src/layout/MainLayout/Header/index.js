@@ -136,7 +136,7 @@ const Header = ({ handleLeftDrawerToggle }) => {
                         }}
                     >
                         <img style={{ width: '140px', marginRight: '10px', verticalAlign: 'middle' }} src={OpenLogo}></img>
-                        资源调度平台&nbsp;
+                        LLM scheduler&nbsp;
                     </h2>
                 </Box>
             </Box>

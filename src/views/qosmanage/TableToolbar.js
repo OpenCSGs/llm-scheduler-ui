@@ -22,7 +22,7 @@ const TableToolbar = (props) => {
                 </Typography>
 
                 <Button onClick={() => operation('add_qos')} startIcon={<Add />}>
-                    添加QOS
+                    Add QOS
                 </Button>
             </Toolbar>
         </>

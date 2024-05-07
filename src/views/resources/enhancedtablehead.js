@@ -11,56 +11,56 @@ export const HeadCells = [
         id: 'name',
         align: 'center',
         disablePadding: true,
-        label: '机器名称',
+        label: 'Host Name',
         sortable: true
     },
     {
         id: 'coreNum',
         align: 'left',
         disablePadding: false,
-        label: '内核数',
+        label: 'Cores',
         sortable: true
     },
     {
         id: 'cpus',
         align: 'left',
         disablePadding: false,
-        label: 'CPU数',
+        label: 'CPUs',
         sortable: false
     },
     {
         id: 'gpus',
         align: 'left',
         disablePadding: false,
-        label: 'GPU数',
+        label: 'GPUs',
         sortable: false
     },
     {
         id: 'cpuload',
         align: 'right',
         disablePadding: false,
-        label: 'cpu负载',
+        label: 'cpu loads',
         sortable: false
     },
     {
         id: 'mem',
         align: 'right',
         disablePadding: false,
-        label: '内存',
+        label: 'Memory',
         sortable: true
     },
     {
         id: 'weight',
         align: 'right',
         disablePadding: false,
-        label: '权重',
+        label: 'Weight',
         sortable: true
     },
     {
         id: 'status',
         align: 'right',
         disablePadding: false,
-        label: '状态',
+        label: 'State',
         sortable: true
     }
 ]

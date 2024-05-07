@@ -124,7 +124,7 @@ const JobDataTab = (props) => {
                             <Box sx={{ p: 2, height: 'auto' }}>
                                 <img style={{ objectFit: 'cover', height: '30vh', width: 'auto' }} src={WorkflowEmptySVG} alt='WorkflowEmptySVG' />
                             </Box>
-                            <div>没有数据</div>
+                            <div>No Data</div>
                         </Stack>}
                 </List>
             </Filelist>
@@ -149,7 +149,7 @@ const JobDataTab = (props) => {
                     </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={handleClose}>关闭</Button>
+                    <Button onClick={handleClose}>Close</Button>
                 </DialogActions>
             </Dialog>
         </Grid>

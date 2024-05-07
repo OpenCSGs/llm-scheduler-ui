@@ -118,11 +118,11 @@ const HPCJobs = () => {
 
     const onNext = (jobType) => {
         const jobDialogProp = {
-            title: '提交作业',
+            title: 'Job Submission',
             jobType: jobType,
             // returnButtonName: '上一步',
-            returnButtonName: '取消',
-            confirmButtonName: '确认'
+            returnButtonName: 'Cancel',
+            confirmButtonName: 'Confirm'
         }
         setJobDialogProps(jobDialogProp)
         setJobShowDialog(true)
@@ -417,7 +417,7 @@ const HPCJobs = () => {
             <MainCard sx={{ background: customization.isDarkMode ? theme.palette.common.black : '' }}>
                 <Stack flexDirection='row'>
                     <Grid sx={{ mb: 1.25 }} container direction='row' width={'100%'}>
-                        <h1>作业信息</h1>
+                        <h1>Job Information</h1>
                         <Box sx={{ flexGrow: 1 }} />
                         <Grid item>
                             <IconButton aria-label='sync' size='small' onClick={() => refresh()}>
@@ -434,7 +434,7 @@ const HPCJobs = () => {
                                 onClick={() => onNext('oth')}
                                 startIcon={<IconPlus />}
                             >
-                                提交作业
+                                Submit
                             </StyledButton>
                         </Grid>
                     </Grid>
@@ -557,7 +557,7 @@ const HPCJobs = () => {
                         }}
                     >
                         <Typography variant='h6' sx={{ pl: 1, pr: 1, color: 'white', background: theme.palette.success.dark }}>
-                            已复制
+                            Copyed
                         </Typography>
                     </Popover>
                     <ConfirmDialog />
@@ -572,7 +572,7 @@ const HPCJobs = () => {
                                 alt='WorkflowEmptySVG'
                             />
                         </Box>
-                        <div>还没有“作业”</div>
+                        <div>No Jobs</div>
                     </Stack>
                 )}
             </MainCard>

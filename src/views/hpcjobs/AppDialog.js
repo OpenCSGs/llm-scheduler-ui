@@ -91,7 +91,7 @@ const AppDialog = ({ show, dialogProps, onCancel, onNext }) => {
                             background: theme.palette.secondary.iconBg,
                             ':hover': { background: theme.palette.secondary.iconHover }
                         }} disableRipple variant='contained' size="large" onClick={() => { setJobType('tra'); }}>
-                        大模型训练
+                        Large model training
                     </BootstrapButton>
                     <BootstrapButton style={{ margin: 20 }}
                         sx={{
@@ -100,7 +100,7 @@ const AppDialog = ({ show, dialogProps, onCancel, onNext }) => {
                             ':hover': { background: theme.palette.secondary.iconHover }
                         }}
                         disableRipple variant='contained' size="large" onClick={() => { setJobType('oth'); }}>
-                        自定义作业
+                        Custom jobs
                     </BootstrapButton>
                 </Box>
             </DialogContent>

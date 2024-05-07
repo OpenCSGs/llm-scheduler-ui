@@ -111,10 +111,10 @@ const JobQueue = () => {
                     <Table sx={{ minWidth: 650 }} aria-label='simple table'>
                         <TableHead>
                             <TableRow>
-                                <TableCell>序号</TableCell>
-                                <TableCell>用户名</TableCell>
-                                <TableCell align='center'>角色</TableCell>
-                                <TableCell align='right'>操作</TableCell>
+                                <TableCell>Number</TableCell>
+                                <TableCell>User Name</TableCell>
+                                <TableCell align='center'>Role</TableCell>
+                                <TableCell align='right'>Operations</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -141,8 +141,8 @@ const JobQueue = () => {
                                                 operation={row_operation}
                                                 row={row}
                                                 menuAction={[
-                                                    { label: '设为管理员', key: 'set_admin' },
-                                                    { label: '设为普通用户', key: 'set_normal_user' }
+                                                    { label: 'Set as admin', key: 'set_admin' },
+                                                    { label: 'Set as normal user', key: 'set_normal_user' }
                                                 ]}
                                             />
                                         </TableCell>

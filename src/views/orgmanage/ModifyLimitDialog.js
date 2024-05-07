@@ -101,7 +101,7 @@ const ModifyLimitDialog = ({ show, currentLimit, group, onCancel, onConfirm }) =
                         select
                         value={partition}
                         onChange={(e) => setPartition(e.target.value)}
-                        helperText='选择队列'
+                        helperText='select partition'
                         variant='standard'
                     >
                         {partitionList.map((row, index) => (
@@ -119,7 +119,7 @@ const ModifyLimitDialog = ({ show, currentLimit, group, onCancel, onConfirm }) =
                         select
                         value={qos}
                         onChange={(e) => setQos(e.target.value)}
-                        helperText='选择QOS'
+                        helperText='Select QOS'
                         variant='standard'
                     >
                         {qosList &&
@@ -143,7 +143,7 @@ const ModifyLimitDialog = ({ show, currentLimit, group, onCancel, onConfirm }) =
                     variant='contained'
                     onClick={onCancel}
                 >
-                    取消
+                    Cancel
                 </StyledButton>
                 <StyledButton
                     sx={{
@@ -155,7 +155,7 @@ const ModifyLimitDialog = ({ show, currentLimit, group, onCancel, onConfirm }) =
                     variant='contained'
                     onClick={() => onConfirm(partition, [qos])}
                 >
-                    确认
+                    OK
                 </StyledButton>
             </DialogActions>
             <ConfirmDialog />

@@ -11,70 +11,70 @@ export const HeadCells = [
         id: 'jobid',
         align: 'left',
         disablePadding: true,
-        label: '作业ID',
+        label: 'Job ID',
         sortable: true
     },
     {
         id: 'partition',
         align: 'left',
         disablePadding: false,
-        label: '队列',
+        label: 'Queues',
         sortable: true
     },
     {
         id: 'jobname',
         align: 'left',
         disablePadding: false,
-        label: '作业名称',
+        label: 'Job Name',
         sortable: true
     },
     {
         id: 'status',
         align: 'left',
         disablePadding: false,
-        label: '作业状态',
+        label: 'Job Status',
         sortable: false
     },
     {
         id: 'reason',
         align: 'left',
         disablePadding: false,
-        label: '状态原因',
+        label: 'State Reason',
         sortable: false
     },
     {
         id: 'hostNum',
         align: 'center',
         disablePadding: false,
-        label: '资源',
+        label: 'Resource',
         sortable: false
     },
     {
         id: 'submitted',
         align: 'center',
         disablePadding: false,
-        label: '提交时间',
+        label: 'Submission Time',
         sortable: true
     },
     {
         id: 'started',
         align: 'center',
         disablePadding: false,
-        label: '开始时间',
+        label: 'Start Time',
         sortable: true
     },
     {
         id: 'usergroup',
         align: 'center',
         disablePadding: false,
-        label: '用户组',
+        label: 'Account',
         sortable: true
     },
     {
         id: 'user',
         align: 'center',
         disablePadding: false,
-        label: '提交用户',
+        label: 'Submission User',
         sortable: true
     }
 ]

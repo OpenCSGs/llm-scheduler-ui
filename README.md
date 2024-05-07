@@ -13,6 +13,7 @@ then configure the environment variable in .env
 ## Quick Start
 1. install dependency
 ```bash
+npm install yarn -g
 yarn install
 ```
 2. install dependency

@@ -264,7 +264,7 @@ export default function OrgManage() {
         if (addAccounts.data) {
             setMessage({
                 display: true,
-                content: '新组织添加成功',
+                content: 'Succeed to add new org',
                 type: 'success'
             })
             setTrigger(!trigger)
@@ -276,7 +276,7 @@ export default function OrgManage() {
             console.log(addAccounts.error)
             setMessage({
                 display: true,
-                content: '添加组织失败',
+                content: 'Failed to add new org',
                 type: 'error'
             })
         }
@@ -287,7 +287,7 @@ export default function OrgManage() {
             console.log(deleteAccount.data)
             setMessage({
                 display: true,
-                content: '删除分组成功',
+                content: 'Succeed to delete group',
                 type: 'success'
             })
             setTrigger(!trigger)
@@ -298,7 +298,7 @@ export default function OrgManage() {
         if (deleteAccount.error) {
             setMessage({
                 display: true,
-                content: '删除分组失败',
+                content: 'Failed to delete group',
                 type: 'error'
             })
         }
@@ -308,7 +308,7 @@ export default function OrgManage() {
         if (setAdmin.data) {
             setMessage({
                 display: true,
-                content: '设置admin成功',
+                content: 'Succeed to assign admin',
                 type: 'success'
             })
         }
@@ -319,7 +319,7 @@ export default function OrgManage() {
             console.log(setAdmin.error)
             setMessage({
                 display: true,
-                content: '设置admin失败',
+                content: 'Failed to assign admin',
                 type: 'error'
             })
         }
@@ -355,9 +355,9 @@ export default function OrgManage() {
                 return item['user']
             })
             props = {
-                title: '移出成员',
-                description: '确定移出: ' + names.toString() + '?',
-                confirmButtonName: '确定'
+                title: 'Remove member',
+                description: 'Are you sure to remove: ' + names.toString() + '?',
+                confirmButtonName: 'Confirm'
             }
             const isConfirmed = await confirm(props)
             if (isConfirmed) {
@@ -365,7 +365,7 @@ export default function OrgManage() {
             }
         } else if (actionId == 'add_memeber') {
             props = {
-                title: '添加成员',
+                title: 'Add Member',
                 existingUsers: rowDatas,
                 target: currentGroup
             }
@@ -391,7 +391,7 @@ export default function OrgManage() {
         if (addAssociations.data) {
             setMessage({
                 display: true,
-                content: '添加成功',
+                content: 'Succeed',
                 type: 'success'
             })
             setTrigger(!trigger)
@@ -406,7 +406,7 @@ export default function OrgManage() {
         }
         setMessage({
             display: true,
-            content: '修改成功',
+            content: 'Updated',
             type: 'success'
         })
         setTrigger(!trigger)
@@ -418,7 +418,7 @@ export default function OrgManage() {
             let data = removeAssociations.error.response.data
             setMessage({
                 display: true,
-                content: '移出失败: ' + data['errors'][0]['error'],
+                content: 'Failed to remove: ' + data['errors'][0]['error'],
                 type: 'error'
             })
         }
@@ -485,8 +485,8 @@ export default function OrgManage() {
                                         onClick={() => focusNode('org' + index, orgKey)}
                                         bgColorForDarkMode='#191207'
                                         menuAction={[
-                                            { label: '删除组织', key: 'delete_org', type: 'org' },
-                                            { label: '添加分组', key: 'add_group', type: 'org' }
+                                            { label: 'Delete Org', key: 'delete_org', type: 'org' },
+                                            { label: 'Add Org', key: 'add_group', type: 'org' }
                                         ]}
                                     >
                                         {Object.keys(organizations[orgKey]).map((groupKey, index) => {
@@ -501,7 +501,7 @@ export default function OrgManage() {
                                                     colorForDarkMode='#FFE2B7'
                                                     bgColorForDarkMode='#191207'
                                                     onClick={() => focusNode('group' + groupKey + index, orgKey, groupKey)}
-                                                    menuAction={[{ label: '删除分组', type: 'group', key: 'delete_group' }]}
+                                                    menuAction={[{ label: 'Delete Group', type: 'group', key: 'delete_group' }]}
                                                 ></StyledTreeItem>
                                             )
                                         })}
@@ -521,7 +521,7 @@ export default function OrgManage() {
                                 }}
                                 fullWidth
                             >
-                                添加组织
+                                Add Org
                             </Button>
                         </TreeView>
                     </Box>
@@ -593,8 +593,8 @@ export default function OrgManage() {
                                                             operation={row_operation}
                                                             row={row}
                                                             menuAction={[
-                                                                { label: '设为管理员', key: 'set_admin' },
-                                                                { label: '变更组织', key: 'change_org' }
+                                                                { label: 'Set Admin', key: 'set_admin' },
+                                                                { label: 'Change Org', key: 'change_org' }
                                                             ]}
                                                         />
                                                     </TableCell>

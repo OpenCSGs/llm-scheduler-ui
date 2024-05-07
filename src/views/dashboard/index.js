@@ -264,8 +264,8 @@ const Dashboard = () => {
             <TabContext value={tab}>
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <TabList onChange={handleChange} aria-label='lab API tabs example'>
-                        <Tab label='HPC集群' value='hpc' />
-                        {config.FEATURE_TOGGLE_K8S && <Tab label='Kubernetes集群' value='k8s' />}
+                        <Tab label='HPC Cluster' value='hpc' />
+                        {config.FEATURE_TOGGLE_K8S && <Tab label='Kubernetes Cluster' value='k8s' />}
                     </TabList>
                 </Box>
                 <TabPanel value='hpc'>

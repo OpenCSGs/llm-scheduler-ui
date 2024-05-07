@@ -68,9 +68,9 @@ const QOSManage = () => {
             setShowQOSDialog(true)
         } else if (actionId == 'delete_qos') {
             let props = {
-                title: '删除QOS',
-                description: '请谨慎操作，确保该QOS未被使用。确定删除QOS: ' + row.name + '? ',
-                confirmButtonName: '确定'
+                title: 'Delete QOS',
+                description: 'Be careful to ensure that this QOS is not being used. Determine the deletion QOS: ' + row.name + '? ',
+                confirmButtonName: 'Yes'
             }
             const isConfirmed = await confirm(props)
             if (isConfirmed) {
@@ -100,7 +100,7 @@ const QOSManage = () => {
         if (removeQOS.data) {
             setMessage({
                 display: true,
-                content: '删除QOS成功',
+                content: 'Succeed to delete QOS',
                 type: 'success'
             })
             setTrigger(!trigger)
@@ -112,7 +112,7 @@ const QOSManage = () => {
             let data = removeQOS.error.response.data
             setMessage({
                 display: true,
-                content: '删除qos失败：' + data['errors'][0]['error'],
+                content: 'Failed to delete qos：' + data['errors'][0]['error'],
                 type: 'error'
             })
         }
@@ -120,9 +120,9 @@ const QOSManage = () => {
 
     useEffect(() => {
         if (postQOS.data) {
-            let msg = '添加QOS成功'
+            let msg = 'Succeed to add QOS'
             if (isEditing) {
-                msg = '修改QOS成功'
+                msg = 'Updated QOS'
             }
             setMessage({
                 display: true,
@@ -138,7 +138,7 @@ const QOSManage = () => {
             let data = postQOS.error.response.data
             setMessage({
                 display: true,
-                content: '添加qos失败：' + data['errors'][0]['error'],
+                content: 'Failed to add QOS' + data['errors'][0]['error'],
                 type: 'error'
             })
         }
@@ -155,17 +155,17 @@ const QOSManage = () => {
     return (
         <>
             <MainCard sx={{ background: customization.isDarkMode ? theme.palette.common.black : '' }}>
-                <TableToolbar title='QOS 列表' operation={operation} />
+                <TableToolbar title='QOS list' operation={operation} />
                 <TableContainer component={Paper}>
                     <Table sx={{ minWidth: 650 }} aria-label='simple table'>
                         <TableHead>
                             <TableRow>
-                                <TableCell>序号</TableCell>
-                                <TableCell>名称</TableCell>
-                                <TableCell align='center'>单用户资源上限</TableCell>
-                                <TableCell align='center'>优先级</TableCell>
-                                <TableCell align='center'>描述</TableCell>
-                                <TableCell align='right'>操作</TableCell>
+                                <TableCell>Number</TableCell>
+                                <TableCell>Name</TableCell>
+                                <TableCell align='center'>Res</TableCell>
+                                <TableCell align='center'>Priority</TableCell>
+                                <TableCell align='center'>Description</TableCell>
+                                <TableCell align='right'>Operations</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
@@ -183,8 +183,8 @@ const QOSManage = () => {
                                             operation={row_operation}
                                             row={row}
                                             menuAction={[
-                                                { label: '修改', key: 'modify_qos' },
-                                                { label: '删除', key: 'delete_qos' }
+                                                { label: 'Modify', key: 'modify_qos' },
+                                                { label: 'Delete', key: 'delete_qos' }
                                             ]}
                                         />
                                     </TableCell>

@@ -185,7 +185,7 @@ const MoveUsersDialog = ({ show, dialogProps, currentLimit, onCancel, onConfirm 
                                                         inputProps={{ 'aria-label': 'select all desserts' }}
                                                     />
                                                 </TableCell>
-                                                <TableCell style={{ fontWeight: 'bold' }}>用户名</TableCell>
+                                                <TableCell style={{ fontWeight: 'bold' }}>User Name</TableCell>
                                             </TableRow>
                                         </TableHead>
                                         <TableBody>
@@ -217,7 +217,7 @@ const MoveUsersDialog = ({ show, dialogProps, currentLimit, onCancel, onConfirm 
                                 </TableContainer>
                             )}
                             {availableUsers.length == 0 && (
-                                <div style={{ height: 220, textAlign: 'center', paddingTop: '100px' }}>暂无可添加的用户</div>
+                                <div style={{ height: 220, textAlign: 'center', paddingTop: '100px' }}>No Users</div>
                             )}
                         </Paper>
                     </Grid>
@@ -228,7 +228,7 @@ const MoveUsersDialog = ({ show, dialogProps, currentLimit, onCancel, onConfirm 
                             id='tableTitle'
                             component='div'
                         >
-                            当前QOS: <b>{qos || '-'}</b>, 队列: <b>{partition || '-'}</b>
+                            Current QOS: <b>{qos || '-'}</b>, Partition: <b>{partition || '-'}</b>
                         </Typography>
                         <Typography
                             sx={{ flex: '1 1 auto', paddingBottom: '16px', fontSize: '15px' }}
@@ -236,7 +236,7 @@ const MoveUsersDialog = ({ show, dialogProps, currentLimit, onCancel, onConfirm 
                             id='tableTitle'
                             component='div'
                         >
-                            将下列成员添加到: {dialogProps.target} ({numSelected})
+                            Add following users to: {dialogProps.target} ({numSelected})
                         </Typography>
                         <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                             {availableUsers &&
@@ -270,7 +270,7 @@ const MoveUsersDialog = ({ show, dialogProps, currentLimit, onCancel, onConfirm 
                     variant='contained'
                     onClick={onCancel}
                 >
-                    取消
+                    Cancel
                 </StyledButton>
                 <StyledButton
                     sx={{
@@ -282,7 +282,7 @@ const MoveUsersDialog = ({ show, dialogProps, currentLimit, onCancel, onConfirm 
                     variant='contained'
                     onClick={handleUsers}
                 >
-                    确认
+                    OK
                 </StyledButton>
             </DialogActions>
         </Dialog>

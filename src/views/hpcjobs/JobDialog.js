@@ -213,7 +213,7 @@ const JobDialog = ({ jobShow, jobDialogProps, userDatas, jobCancel, jobConfirm }
                 aria-describedby='alert-dialog-description'
             >
                 <DialogTitle sx={{ fontSize: '1rem' }} id='alert-dialog-title'>
-                    {jobDialogProps.title}-自定义作业
+                    {jobDialogProps.title}-custom jobs
                 </DialogTitle>
                 <DialogContent>
                     <Box
@@ -226,12 +226,12 @@ const JobDialog = ({ jobShow, jobDialogProps, userDatas, jobCancel, jobConfirm }
                     >
                         <div>
                             <Stack sx={{ position: 'relative' }} direction='row'>
-                                <Typography variant='overline'>基本参数：</Typography>
+                                <Typography variant='overline'>Basic Parameters：</Typography>
                             </Stack>
                             <TextField
                                 id='myJobCMDHelperText'
-                                label='运行命令'
-                                helperText='*必填项，输入作业运行命令, e.g: sleep 30'
+                                label='Command'
+                                helperText='*Required, job command, e.g: sleep 30'
                                 required
                                 variant='standard'
                                 value={jobCMD}
@@ -239,8 +239,8 @@ const JobDialog = ({ jobShow, jobDialogProps, userDatas, jobCancel, jobConfirm }
                             />
                             <TextField
                                 id='myJobNameHelperText'
-                                label='作业名称'
-                                helperText='输入作业名称，e.g: myJob'
+                                label='Job Name'
+                                helperText='Input Job Name，e.g: myJob'
                                 variant='standard'
                                 value={jobName}
                                 onChange={(e) => setJobName(e.target.value)}
@@ -249,7 +249,7 @@ const JobDialog = ({ jobShow, jobDialogProps, userDatas, jobCancel, jobConfirm }
                         <br />
                         <div>
                             <Stack sx={{ position: 'relative' }} direction='row'>
-                                <Typography variant='overline'>高级参数（选填）：</Typography>
+                                <Typography variant='overline'>Advanced Parameter(Optional)：</Typography>
                             </Stack>
                             <TextField
                                 id='PartitionHelperText'
@@ -257,7 +257,7 @@ const JobDialog = ({ jobShow, jobDialogProps, userDatas, jobCancel, jobConfirm }
                                 select
                                 value={partition}
                                 onChange={(e) => setPartition(e.target.value)}
-                                helperText='输入提交作业到哪个作业组分区（partition）'
+                                helperText='Input job Partition'
                                 variant='standard'
                             >
                                 {partitionList.map((option) => (
@@ -272,7 +272,7 @@ const JobDialog = ({ jobShow, jobDialogProps, userDatas, jobCancel, jobConfirm }
                                 select
                                 value={account}
                                 onChange={(e) => setAccount(e.target.value)}
-                                helperText='输入用户组账户名称（Account）'
+                                helperText='Input Account'
                                 variant='standard'
                             >
                                 {accountList.map((option) => (
@@ -284,47 +284,47 @@ const JobDialog = ({ jobShow, jobDialogProps, userDatas, jobCancel, jobConfirm }
                             <TextField
                                 id='QoSHelperText'
                                 label='QoS'
-                                helperText='输入QoS'
+                                helperText='Input QoS'
                                 variant='standard'
                                 value={qos}
                                 onChange={(e) => setQos(e.target.value)}
                             />
                             <TextField
                                 id='NodeHelperText'
-                                label='节点数量'
-                                helperText='并行运行作业的节点数量，default=1'
+                                label='Node Number'
+                                helperText='input required node number, default=1'
                                 variant='standard'
                                 value={nodes}
                                 onChange={(e) => setNodes(e.target.value)}
                             />
                             <TextField
                                 id='TasksHelperText'
-                                label='每节点任务数'
-                                helperText='每个节点上并行运行的任务数，default=1'
+                                label='Task Number Per Node'
+                                helperText='Task numbers in every single node, default=1'
                                 variant='standard'
                                 value={tasks_per_node}
                                 onChange={(e) => setTasksPerNode(e.target.value)}
                             />
                             <TextField
                                 id='CPUHelperText'
-                                label='每任务CPU数'
-                                helperText='每个任务上运行的CPU核，默认占满。e.g: 2'
+                                label='CPU Number Per Task'
+                                helperText='CPU cores number per task, e.g: 2'
                                 variant='standard'
                                 value={cpus_per_task}
                                 onChange={(e) => setCpusPerTask(e.target.value)}
                             />
                             <TextField
                                 id='memory_per_cpu'
-                                label='每CPU内存占用'
-                                helperText='每个CPU核允许的内存占用，默认占满。e.g: 1G/500M'
+                                label='Memory per CPU'
+                                helperText='e.g: 1G/500M'
                                 variant='standard'
                                 value={memory_per_cpu}
                                 onChange={(e) => setMemoryPerCpu(e.target.value)}
                             />
                             <TextField
                                 id='otherOpt'
-                                label='其它参数'
-                                helperText="其它作业参数, e.g: required_nodes=['m1','m2'] maximum_cpus=3 tres_per_node=gres/gpu:0"
+                                label='Other Options'
+                                helperText="e.g: required_nodes=['m1','m2'] maximum_cpus=3 tres_per_node=gres/gpu:0"
                                 variant='standard'
                                 value={otherOpt}
                                 onChange={(e) => setOtherOpt(e.target.value)}
@@ -333,20 +333,20 @@ const JobDialog = ({ jobShow, jobDialogProps, userDatas, jobCancel, jobConfirm }
                         <br />
                         <div>
                             <Stack sx={{ position: 'relative' }} direction='row'>
-                                <Typography variant='overline'>数据（选填）：</Typography>
+                                <Typography variant='overline'>Data (Optional): </Typography>
                             </Stack>
                             <TextField
                                 id='standard_input'
-                                label='输入数据'
-                                helperText='输入数据路径'
+                                label='Input Data'
+                                helperText='Data Location'
                                 variant='standard'
                                 value={standard_input}
                                 onChange={(e) => setStandardInput(e.target.value)}
                             />
                             <TextField
                                 id='current_working_directory'
-                                label='作业输出文件夹'
-                                helperText='作业输出文件夹路径（同current_working_directory）e.g: /tmp'
+                                label='Output Folder'
+                                helperText='Job Output Location (same to current_working_directory）e.g: /tmp'
                                 variant='standard'
                                 value={current_working_directory}
                                 onChange={(e) => setCurrentWorkingDirectory(e.target.value)}
@@ -391,13 +391,13 @@ const JobDialog = ({ jobShow, jobDialogProps, userDatas, jobCancel, jobConfirm }
                 aria-describedby='alert-dialog-description'
             >
                 <DialogTitle sx={{ fontSize: '1rem' }} id='alert-dialog-title'>
-                    {jobDialogProps.title}-大模型推理
+                    {jobDialogProps.title}-LLM Inference
                 </DialogTitle>
                 <DialogContent>
                     <Box sx={{ p: 2 }}>
                         <Stack sx={{ position: 'relative' }} direction='row'>
                             <Typography variant='overline'>
-                                选择大模型
+                                Select LLM
                                 <span style={{ color: 'red' }}>&nbsp;*</span>
                             </Typography>
                         </Stack>
@@ -423,13 +423,13 @@ const JobDialog = ({ jobShow, jobDialogProps, userDatas, jobCancel, jobConfirm }
                     </Box>
                     <Box sx={{ p: 2 }}>
                         <Stack sx={{ position: 'relative' }} direction='row'>
-                            <Typography sx={{ fontSize: 12, m: 1 }}>其它参数, e.g: partition=low qos=default account=default</Typography>
+                            <Typography sx={{ fontSize: 12, m: 1 }}>Other options, e.g: partition=low qos=default account=default</Typography>
                         </Stack>
                         <OutlinedInput
                             id='otherOpt'
                             type='string'
                             fullWidth
-                            placeholder='作业运行参数，比如作业组，资源等特殊需求.'
+                            placeholder='Job runtime parameters, for example: job account.'
                             multiline={true}
                             // rows={3}
                             value={otherOpt}
@@ -475,13 +475,13 @@ const JobDialog = ({ jobShow, jobDialogProps, userDatas, jobCancel, jobConfirm }
                 aria-describedby='alert-dialog-description'
             >
                 <DialogTitle sx={{ fontSize: '1rem' }} id='alert-dialog-title'>
-                    {jobDialogProps.title}-大模型训练
+                    {jobDialogProps.title}-LLM Train
                 </DialogTitle>
                 <DialogContent>
                     <Box sx={{ p: 2 }}>
                         <Stack sx={{ position: 'relative' }} direction='row'>
                             <Typography variant='overline'>
-                                选择训练模版
+                                Select Template
                                 <span style={{ color: 'red' }}>&nbsp;*</span>
                             </Typography>
                         </Stack>

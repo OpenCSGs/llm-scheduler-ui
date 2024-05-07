@@ -12,7 +12,7 @@ export const HeadCells = [
         id: 'name',
         align: 'left',
         disablePadding: true,
-        label: '用户名',
+        label: 'User Name',
         sortable: true
     },
 
@@ -20,28 +20,28 @@ export const HeadCells = [
         id: 'accounts',
         align: 'left',
         disablePadding: false,
-        label: '用户组',
+        label: 'User accounts',
         sortable: true
     },
     {
         id: 'partitions',
         align: 'left',
         disablePadding: false,
-        label: '可用队列',
+        label: 'Available partitions',
         sortable: false
     },
     {
         id: 'cluster',
         align: 'left',
         disablePadding: false,
-        label: '集群',
+        label: 'Cluster',
         sortable: true
     },
     {
         id: 'operation',
         align: 'right',
         disablePadding: false,
-        label: '操作',
+        label: 'Operation',
         sortable: false
     }
 ]

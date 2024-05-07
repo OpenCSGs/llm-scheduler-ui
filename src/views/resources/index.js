@@ -304,7 +304,7 @@ const Resources = () => {
                                 }}
                             >
                                 <Typography variant='h6' sx={{ pl: 1, pr: 1, color: 'white', background: theme.palette.success.dark }}>
-                                    已复制
+                                    Copyed
                                 </Typography>
                             </Popover>
                             <ConfirmDialog />
@@ -403,7 +403,7 @@ const Resources = () => {
                                 }}
                             >
                                 <Typography variant='h6' sx={{ pl: 1, pr: 1, color: 'white', background: theme.palette.success.dark }}>
-                                    已复制
+                                    Copyed
                                 </Typography>
                             </Popover>
                             <ConfirmDialog />

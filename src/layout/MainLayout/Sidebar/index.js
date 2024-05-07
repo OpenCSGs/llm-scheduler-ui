@@ -24,7 +24,7 @@ const Sidebar = ({ drawerOpen, drawerToggle, window }) => {
             <Box sx={{ display: { xs: 'block', md: 'none' } }}>
                 <Box sx={{ display: 'flex', p: 2, mx: 'auto' }}>
                     {/* <LogoSection /> */}
-                    <h1>资源调度平台&nbsp;</h1>
+                    <h1>LLM scheduler&nbsp;</h1>
                 </Box>
             </Box>
             <BrowserView>

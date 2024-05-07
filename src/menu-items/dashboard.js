@@ -63,7 +63,7 @@ const dashboard = () => {
             },
             {
                 id: 'resources',
-                title: '资源管理',
+                title: 'Resources',
                 type: 'item',
                 url: '/resources',
                 icon: icons.StorageIcon,
@@ -71,7 +71,7 @@ const dashboard = () => {
             },
             {
                 id: 'workload',
-                title: '任务管理',
+                title: 'Tasks Management',
                 type: 'collapse',
                 url: '',
                 icon: icons.FitbitIcon,
@@ -79,7 +79,7 @@ const dashboard = () => {
                 children: [
                     {
                         id: 'hpcjobs',
-                        title: '作业管理',
+                        title: 'Jobs',
                         type: 'item',
                         url: '/hpcjobs',
                         icon: icons.IconCpu,
@@ -87,7 +87,7 @@ const dashboard = () => {
                     },
                     {
                         id: 'k8sjobs',
-                        title: '服务管理',
+                        title: 'Services',
                         type: 'item',
                         url: '/k8sjobs',
                         icon: icons.IconContainer,
@@ -98,7 +98,7 @@ const dashboard = () => {
             },
             {
                 id: 'tools',
-                title: '我的资源',
+                title: 'My Resources',
                 type: 'item',
                 url: '/jobqueue',
                 icon: AccountCircleIcon,
@@ -106,7 +106,7 @@ const dashboard = () => {
             },
             {
                 id: 'users',
-                title: '组织管理',
+                title: 'Organization Management',
                 type: 'collapse',
                 icon: icons.ManageAccountsIcon,
                 breadcrumbs: true,
@@ -114,7 +114,7 @@ const dashboard = () => {
                 children: [
                     {
                         id: 'orgmanage',
-                        title: '组织机构',
+                        title: 'Organization',
                         type: 'item',
                         url: '/orgmanage',
                         icon: icons.GroupsIcon,
@@ -122,7 +122,7 @@ const dashboard = () => {
                     },
                     {
                         id: 'usermanage',
-                        title: '全部成员',
+                        title: 'Members',
                         type: 'item',
                         url: '/usermanage',
                         icon: icons.AccountBoxIcon,
@@ -130,7 +130,7 @@ const dashboard = () => {
                     },
                     {
                         id: 'qosmanage',
-                        title: 'QOS配置',
+                        title: 'QOS',
                         type: 'item',
                         url: '/qosmanage',
                         icon: icons.IconSettingsAutomation,

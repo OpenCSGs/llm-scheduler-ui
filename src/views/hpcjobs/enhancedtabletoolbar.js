@@ -138,9 +138,9 @@ const EnhancedTableToolbar = (props) => {
                                         value={filterValue}
                                         onChange={handleChange}
                                     >
-                                        <FormControlLabel value='past1day' control={<Radio />} label='最近一天的作业' />
-                                        <FormControlLabel value='past1week' control={<Radio />} label='最近一周的作业' />
-                                        <FormControlLabel value='past2week' control={<Radio />} label='最近两周的作业' />
+                                        <FormControlLabel value='past1day' control={<Radio />} label='Past one day jobs' />
+                                        <FormControlLabel value='past1week' control={<Radio />} label='Past one week jobs' />
+                                        <FormControlLabel value='past2week' control={<Radio />} label='Past two weeks jobs' />
                                     </RadioGroup>
                                 </FormControl>
                             </MenuItem>
@@ -157,7 +157,7 @@ const EnhancedTableToolbar = (props) => {
                                 >
                                     <InputBase
                                         sx={{ ml: 1, flex: 1 }}
-                                        placeholder='输入作业名称'
+                                        placeholder='Input Job Name'
                                         inputProps={{ 'aria-label': 'search job' }}
                                         value={searchKey}
                                         onChange={(event) => {
