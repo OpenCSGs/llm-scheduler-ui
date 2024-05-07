@@ -122,7 +122,7 @@ export default function OrgManage() {
         setSelectedNode(selectedNode)
         setPage(0)
         if (group) {
-            setTitle('分组: ' + group)
+            setTitle('Group: ' + group)
             loopGroup(org, group, users, orgs)
             setRowDatas(users)
             setCurrentGroup(group)
@@ -131,7 +131,7 @@ export default function OrgManage() {
                 getLimit.request('id=' + users[0]['id'])
             }
         } else {
-            setTitle('组织: ' + org)
+            setTitle('Organizations: ' + org)
             for (let g in organizations[org]) {
                 loopGroup(org, g, users)
             }
@@ -593,7 +593,7 @@ export default function OrgManage() {
                                                             operation={row_operation}
                                                             row={row}
                                                             menuAction={[
-                                                                { label: 'Set Admin', key: 'set_admin' },
+                                                                { label: 'Set as admin', key: 'set_admin' },
                                                                 { label: 'Change Org', key: 'change_org' }
                                                             ]}
                                                         />
