@@ -10,6 +10,9 @@ It performs large model jobs scheduling based on GPU resources.
 please setup scheduler API fisrtly [llm-scheduler-api](https://github.com/OpenCSGs/llm-scheduler-api)
 then configure the environment variable in .env
 
+<video src="https://github.com/ganisback/video/blob/9d332ed1b526498e615a533deb43f2450aaa4d06/demo.mp4" width="800px" height="600px" controls="controls"></video>
+
+
 ## Quick Start
 1. install dependency
 ```bash
